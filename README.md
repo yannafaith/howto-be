@@ -18,7 +18,7 @@
 
 ---
 
-[Technical Design Document](https://docs.google.com/document/d/1pqIehm7TRPA16RRoL4408-N7Ml7xRKgG7_9sYUxTSOo/edit#heading=h.4oicemcbd57)
+[Technical Design Document](https://docs.google.com/document/d/1pqIehm7TRPA16RRoL4408-N7Ml7xRKgG7_9sYUxTSOo/)
 
 [Trello Board](https://trello.com/b/jiWkPUrs/build-week)
 
