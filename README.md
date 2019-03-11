@@ -1,3 +1,52 @@
+## Server is live on:
+
+# USERS ROUTES
+
+## **GET USERS**
+
+_Method Url:_ `/api/users`
+
+_HTTP method:_ **[GET]**
+
+#### Response
+
+##### 200 (OK)
+
+```
+[
+    {
+        "userId": 1,
+        "username": "tommy",
+        "password": "$2a$11$LQImXlHE7dt0RSD9gjuvBecaZMMKYuW.vGcWsi3YumGU25PwLiFM2",
+        "firstname": "Tommy",
+        "lastname": "Carr",
+        "email": "tommy@gmail.com",
+        "phone": 5104082587
+    },
+    {
+        "userId": 2,
+        "username": "linda",
+        "password": "$2a$11$d6mtGCQJBekPkqHvyog7GuaE82AfjcXzytL3ELtR8Dc.ENBNu7i/a",
+        "firstname": "Linda",
+        "lastname": "La",
+        "email": "linda@gmail.com",
+        "phone": 5102382227
+    },
+    {
+        "userId": 3,
+        "username": "jimmy",
+        "password": "$2a$11$zXVFMlzrFfu9aYoJFOJCs.94KBfBvt3/BODdYaMWCj4ozs1EHj/Vy",
+        "firstname": "Jimmy",
+        "lastname": "Butler",
+        "email": "jimmy@gmail.com",
+        "phone": 7072272555
+    }
+]
+```
+
+---
+
+
 # How-To
 
 **Pitch**

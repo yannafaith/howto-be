@@ -2,7 +2,7 @@ const express = require('express');
 const server = express();
 const helmet = require('helmet');
 
-const users = require('../database-routes/users.js');
+const users = require('./routes/users-router.js');
 // const posts = require('../database-routes/posts.js');
 
 server.use(express.json());

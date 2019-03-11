@@ -1,5 +1,5 @@
 const express = require('express');
-const users = require('../database-models/users.js')
+const users = require('../../database/models/users-model.js')
 const router = express.Router();
 
 // ========================== GET 
@@ -20,8 +20,8 @@ router.post('/', (req, res) => {
     const newUser = req.body;
     if (newUser.username && newUser.password && newUser.email) {
         users.insert(newUser)
-        .then(ids => {
-            res.status(201).json({ids})
+        .then(() => {
+            res.status(201).json({newUser})
         })
         .catch(err => {
             res.status(500).json({error: 'unable to create user'})

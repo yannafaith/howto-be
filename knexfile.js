@@ -1,7 +1,4 @@
-require('dotenv').config();
-const pg = require('pg');
-pg.defaults.ssl = true;
-
+const pg = require('pg')
 module.exports = {
   development: {
     client: 'sqlite3',
@@ -21,9 +18,21 @@ module.exports = {
       directory: './database/seeds',
     },
   },
+  testing: {
+    client: 'pg',
+    connection: 'postgres://localhost:5432',
+    migrations: {
+       directory: './database/migrations',
+    },
+    seeds: {
+       directory: './database/seeds',
+    },
+    useNullAsDefault: true,
+  },
   production: {
     client: 'pg',
     connection: process.env.DATABASE_URL,
+    ssl: true,
     pool: {
       min: 2,
       max: 10,
