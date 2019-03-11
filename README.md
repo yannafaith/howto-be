@@ -1,5 +1,92 @@
 ## Server is live on:
 
+https://yanna-howto.herokuapp.com/api/
+
+# AUTH ROUTES
+
+## **REGISTER**
+
+_Method Url:_ `/api/auth/register`
+
+_HTTP method:_ **[POST]**
+
+#### Body
+
+| name        | type    | required | description    |
+| ----------- | ------- | -------- | -------------- |
+| `username`  | String  | Yes      | Must be unique |
+| `email`     | String  | Yes      | Must be unique |
+| `password`  | String  | Yes      |                |
+| `firstName` | String  | Yes      |                |
+| `lastName`  | String  | Yes      |                |
+
+
+_example:_
+
+```
+{
+      "username": "matt04",
+      "password": "password",
+      "firstName": "Matt",
+      "lastName": "Jones",
+      "email": "matt@gmail.com"
+}
+```
+
+#### Response
+
+##### 201 (Created)
+
+> If you successfully register a user the endpoint will return an HTTP response with a status code `201` and a body as below.
+
+```
+{
+    "message": "Registration successful",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Implbm55IiwicGFzc3dvcmQiOiIkMmEkMTEkME5UTXFlcGF1YmQ0eXU2Lk9obFZsLlU3NGNXUVdWMVBwd0d2WnVGNldBYXB3cDlCTkNMd0MiLCJmaXJzdE5hbWUiOiJKZW5ueSIsImxhc3ROYW1lIjoiTGkiLCJlbWFpbCI6Implbm55QGdtYWlsLmNvbSIsInBob25lIjo0MTU2MjY3Njg4LCJpYXQiOjE1NDkxNzA1MjMsImV4cCI6MTU0OTE3NDEyM30.jOxH0YlAABmP_W3BaF3TowhCKHP9hFkLcyw-P-dQE_M",
+    "userId": 7
+}
+```
+
+---
+
+## **LOGIN**
+
+_Method Url:_ `/api/auth/login`
+
+_HTTP method:_ **[POST]**
+
+#### Body
+
+| name       | type   | required | description                                                        |
+| ---------- | ------ | -------- | ------------------------------------------------------------------ |
+| `email`    | String | Yes      | Must match an email in the database                                |
+| `password` | String | Yes      | Must match a password in the database corresponding to above email |
+
+_example:_
+
+```
+{
+  email: "matt@gmail.com",
+  password: "password"
+}
+```
+
+#### Response
+
+##### 200 (OK)
+
+> If you successfully login, the endpoint will return an HTTP response with a status code `200` and a body as below.
+
+```
+{
+    "message": "Welcome back Matt Jones",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRvbW15IiwicGFzc3dvcmQiOiIkMmEkMTEkaDBMb3hsU0pTTWxzcXNVUVQ3ZHBRZUVXbGxrNXk2M2xKVC9BQy9kU0kvWERPdnFxaHNiUjYiLCJlbWFpbCI6InRvbW15QGdtYWlsLmNvbSIsInBob25lIjo1MTA0MDgyNTg3LCJpYXQiOjE1NDkzMDEyNDMsImV4cCI6MTU0OTMwNDg0M30.TXnqIh3moCBZX-FDK5kuUURkLZtWfxmIZO3IqQhlT50"
+    "userId": 7
+}
+```
+
+---
+
 # USERS ROUTES
 
 ## **GET USERS**
