@@ -1,14 +1,14 @@
 const db = require('../dbConfig.js');
 
-/*
- async function insert(user) {
-   return db('users').insert(user);
- }; */
+async function insert(post) {
+  await db('posts').insert(post)
+  return db('posts')
+};
 
  async function getAll() {
    return db('posts');
 };
 
 module.exports = {
-  getAll
+  getAll, insert
 };

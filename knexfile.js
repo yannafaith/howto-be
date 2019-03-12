@@ -23,6 +23,7 @@ module.exports = {
   },
   testing: {
     client: 'pg',
+    ssl: true,
     connection: 'postgres://localhost:5432',
     migrations: {
        directory: './database/migrations',

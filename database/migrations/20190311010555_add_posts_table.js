@@ -6,8 +6,7 @@ exports.up = function(knex, Promise) {
         table.text('body').notNullable();
         table.integer('likes');
         table.timestamps(true, true);
-        table.integer('creator_id').notNullable().unsigned();
-        table.foreign('creator_id').references('users.id');
+        table.integer('creator_id').notNullable();
     });
   
 };

@@ -15,10 +15,6 @@ server.use('/api/users', users);
 server.use('/api/auth', auth);
 server.use('/api/posts', posts);
 
-/*
-Need to write api/auth/login, api/auth/register, api/users, api/posts routes
-*/
-
 server.get('/api', (req, res) => {
     res.status(200).json({message: "API Running!"});
 });
