@@ -133,6 +133,183 @@ _HTTP method:_ **[GET]**
 
 ---
 
+# HOWTO ROUTES
+
+## **GET POST**
+
+_Method Url:_ `/api/posts`
+
+_HTTP method:_ **[GET]**
+
+#### Response
+
+##### 200 (OK)
+
+```
+[
+    {
+        "id": 1,
+        "title": "How to sign up for Lambda School",
+        "body": "Quia et in placeat. Et quis cupiditate similique vel itaque explicabo. Minus id natus sint nihil sapiente qui sed id.\n \rDeleniti aperiam omnis a. Officiis voluptatem voluptatem optio ducimus earum. Saepe fugit dolorum aut maiores molestias qui.\n \rHic nostrum aliquid molestiae libero. Rerum eos consectetur aliquid. Voluptatem et eius deserunt quas autem nihil nesciunt eligendi. Dolorum modi ipsa dolor sunt velit esse consequatur sapiente. Doloribus id laborum animi vitae.",
+        "likes": 0,
+        "created_at": "2019-03-12 17:54:29",
+        "updated_at": "2019-03-12 17:54:29",
+        "creator_id": 1
+    },
+    {
+        "id": 2,
+        "title": "How to Create a React App",
+        "body": "Dignissimos accusantium possimus mollitia. Sunt non enim nostrum repellat molestiae maxime voluptas. Natus et voluptatem quo. Id repellat praesentium ea esse molestiae distinctio atque. Consectetur voluptas sit nostrum at.\n \rDoloribus fugiat et. Est consequatur provident molestiae molestias explicabo possimus. Quia earum itaque. Ex quis sed et pariatur.\n \rMinus qui est impedit qui dicta et minus voluptatum. Aspernatur reiciendis animi aperiam nihil vero aut voluptas cum sapiente. Dicta velit laudantium minus itaque et ratione sed aut non.",
+        "likes": 0,
+        "created_at": "2019-03-12 17:54:29",
+        "updated_at": "2019-03-12 17:54:29",
+        "creator_id": 1
+    },
+    {
+        "id": 3,
+        "title": "How to train for 2 marathons",
+        "body": "Quia et in placeat. Et quis cupiditate similique vel itaque explicabo. Minus id natus sint nihil sapiente qui sed id.\n \rDeleniti aperiam omnis a. Officiis voluptatem voluptatem optio ducimus earum. Saepe fugit dolorum aut maiores molestias qui.\n \rHic nostrum aliquid molestiae libero. Rerum eos consectetur aliquid. Voluptatem et eius deserunt quas autem nihil nesciunt eligendi. Dolorum modi ipsa dolor sunt velit esse consequatur sapiente. Doloribus id laborum animi vitae.",
+        "likes": 0,
+        "created_at": "2019-03-12 17:54:29",
+        "updated_at": "2019-03-12 17:54:29",
+        "creator_id": 1
+    }
+]
+```
+
+---
+
+## **GET POST BY ID**
+
+_Method Url:_ `/api/posts/:id`
+
+_HTTP method:_ **[GET]**
+
+#### Response
+
+##### 200 (OK)
+
+```
+    {
+        "id": 3,
+        "title": "How to train for 2 marathons",
+        "body": "Quia et in placeat. Et quis cupiditate similique vel itaque explicabo. Minus id natus sint nihil sapiente qui sed id.\n \rDeleniti aperiam omnis a. Officiis voluptatem voluptatem optio ducimus earum. Saepe fugit dolorum aut maiores molestias qui.\n \rHic nostrum aliquid molestiae libero. Rerum eos consectetur aliquid. Voluptatem et eius deserunt quas autem nihil nesciunt eligendi. Dolorum modi ipsa dolor sunt velit esse consequatur sapiente. Doloribus id laborum animi vitae.",
+        "likes": 0,
+        "created_at": "2019-03-12 17:54:29",
+        "updated_at": "2019-03-12 17:54:29",
+        "creator_id": 1
+    }
+```
+
+---
+
+## **ADD A POST**
+
+_Method Url:_ `/api/posts`
+
+_HTTP method:_ **[POST]**
+
+#### Body
+
+| name          | type    | required |
+| ------------- | ------- | -------- |
+| `creator_id`  | Integer | Yes      |
+| `title`       | String  | Yes      |
+| `body`        | Text    | Yes      |
+
+
+_example:_
+
+```
+{
+    "title": "How to train for 2 marathons",
+    "body": "Quia et in placeat. Et quis cupiditate similique vel itaque explicabo. Minus id natus sint nihil sapiente qui sed id.\n \rDeleniti aperiam omnis a. Officiis voluptatem voluptatem optio ducimus earum. Saepe fugit dolorum aut maiores molestias qui.\n \rHic nostrum aliquid molestiae libero. Rerum eos consectetur aliquid. Voluptatem et eius deserunt quas autem nihil nesciunt eligendi. Dolorum modi ipsa dolor sunt velit esse consequatur sapiente. Doloribus id laborum animi vitae.",
+    "creator_id": 1
+}
+```
+
+#### Response
+
+##### 201 (Created)
+
+```
+{
+    "message": "post created!",
+    "posts": [
+    {
+        "id": 1,
+        "title": "How to sign up for Lambda School",
+        "body": "Quia et in placeat. Et quis cupiditate similique vel itaque explicabo. Minus id natus sint nihil sapiente qui sed id.\n \rDeleniti aperiam omnis a. Officiis voluptatem voluptatem optio ducimus earum. Saepe fugit dolorum aut maiores molestias qui.\n \rHic nostrum aliquid molestiae libero. Rerum eos consectetur aliquid. Voluptatem et eius deserunt quas autem nihil nesciunt eligendi. Dolorum modi ipsa dolor sunt velit esse consequatur sapiente. Doloribus id laborum animi vitae.",
+        "likes": 0,
+        "created_at": "2019-03-12 17:54:29",
+        "updated_at": "2019-03-12 17:54:29",
+        "creator_id": 1
+    },
+    {
+        "id": 2,
+        "title": "How to Create a React App",
+        "body": "Dignissimos accusantium possimus mollitia. Sunt non enim nostrum repellat molestiae maxime voluptas. Natus et voluptatem quo. Id repellat praesentium ea esse molestiae distinctio atque. Consectetur voluptas sit nostrum at.\n \rDoloribus fugiat et. Est consequatur provident molestiae molestias explicabo possimus. Quia earum itaque. Ex quis sed et pariatur.\n \rMinus qui est impedit qui dicta et minus voluptatum. Aspernatur reiciendis animi aperiam nihil vero aut voluptas cum sapiente. Dicta velit laudantium minus itaque et ratione sed aut non.",
+        "likes": 0,
+        "created_at": "2019-03-12 17:54:29",
+        "updated_at": "2019-03-12 17:54:29",
+        "creator_id": 1
+    },
+    {
+        "id": 3,
+        "title": "How to train for 2 marathons",
+        "body": "Quia et in placeat. Et quis cupiditate similique vel itaque explicabo. Minus id natus sint nihil sapiente qui sed id.\n \rDeleniti aperiam omnis a. Officiis voluptatem voluptatem optio ducimus earum. Saepe fugit dolorum aut maiores molestias qui.\n \rHic nostrum aliquid molestiae libero. Rerum eos consectetur aliquid. Voluptatem et eius deserunt quas autem nihil nesciunt eligendi. Dolorum modi ipsa dolor sunt velit esse consequatur sapiente. Doloribus id laborum animi vitae.",
+        "likes": 0,
+        "created_at": "2019-03-12 17:54:29",
+        "updated_at": "2019-03-12 17:54:29",
+        "creator_id": 1
+    }
+    ]
+}
+```
+
+---
+
+## **UPDATE POST**
+
+_Method Url:_ `/api/posts/:id`
+
+_HTTP method:_ **[PUT]**
+
+#### Response
+
+##### 202 (Accepted)
+
+```
+{
+    "message": "post: 'How to train for 5 marathons' has been updated",
+    "changes": {
+        "title": "How to train for marathons",
+        "body": "Quia et in placeat. Et quis cupiditate similique vel itaque explicabo. Minus id natus sint nihil sapiente qui sed id.\n \rDeleniti aperiam omnis a. Officiis voluptatem voluptatem optio ducimus earum. Saepe fugit dolorum aut maiores molestias qui.\n \rHic nostrum aliquid molestiae libero. Rerum eos consectetur aliquid. Voluptatem et eius deserunt quas autem nihil nesciunt eligendi. Dolorum modi ipsa dolor sunt velit esse consequatur sapiente. Doloribus id laborum animi vitae.",
+        "likes": 0,
+        "creator_id": 1
+    }
+}
+```
+
+---
+
+## **DELETE POST**
+
+_Method Url:_ `/api/posts/:id`
+
+_HTTP method:_ **[DELETE]**
+
+#### Response
+
+##### 202 (Accepted)
+
+```
+{
+    "message": "post has been deleted."
+}
+```
+---
+
 
 # How-To
 

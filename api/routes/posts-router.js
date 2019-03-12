@@ -38,7 +38,10 @@ router.post('/', async (req, res) => {
     const newPost = req.body;
     const allPosts = await posts.insert(newPost)
     try {
-        res.status(201).json(allPosts)
+        res.status(201).json({
+           message: "post created!",
+           posts: allPosts
+         })
 
     } catch {
         res.status(500).json(err)
@@ -61,11 +64,11 @@ router.put('/:id', async (req, res) => {
                .where({ id: id })
                .update(changes);
        res.status(202).json({
-          message: `post: '${post.title}' has been updated`,
+          message: `post with id:'${post.id}' has been updated`,
           changes,
        });
     } catch (err) {
-       res.status(500).json({ error: 'Unable to update the item' });
+       res.status(500).json({ error: 'unable to update the post' });
     }
  });
 
