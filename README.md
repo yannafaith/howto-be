@@ -57,16 +57,16 @@ _HTTP method:_ **[POST]**
 
 #### Body
 
-| name       | type   | required | description                                                        |
-| ---------- | ------ | -------- | ------------------------------------------------------------------ |
-| `email`    | String | Yes      | Must match an email in the database                                |
-| `password` | String | Yes      | Must match a password in the database corresponding to above email |
+| name       | type   | required | description                                                           |
+| ---------- | ------ | -------- | ------------------------------------------------------------------    |  
+| `username` | String | Yes      | Must match an email in the database                                   |
+| `password` | String | Yes      | Must match a password in the database corresponding to above username |
 
 _example:_
 
 ```
 {
-  email: "matt@gmail.com",
+  username: "yannafaith",
   password: "password"
 }
 ```

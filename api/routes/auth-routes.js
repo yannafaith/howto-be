@@ -11,14 +11,15 @@ router.post('/register', async (req, res) => {
     creds.password = hash;
 
     try {
-       const user = await users.insert(creds)
+       const insertUser = await users.insert(creds);
        const token = authHelper.generateToken(creds);
 
        res.status(201).json({
           message: `Registration successful`,
           token,
-          userId: user[0],
+          currentUser: insertUser,
        });
+
     } catch (err) {
        res.status(500).json({ message: `Unable to register` });
     }
@@ -38,7 +39,7 @@ router.post('/register', async (req, res) => {
           res.status(200).json({
              message: `Welcome back ${user.firstName} ${user.lastName}`,
              token,
-             userId: user.userId,
+             currentUser: user
           });
        } else {
           res.status(401).json({ message: `Unauthorized credentials` });
