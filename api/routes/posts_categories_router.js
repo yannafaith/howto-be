@@ -50,7 +50,7 @@ const db = require('../../database/dbConfig.js');
     // will have to change name to category_name when rollback migrations and seeding. 
 
     try {
-        res.status(200).json({message: `${category_added[0].name} category has been added to post with title: ${target_post[0].title}. `, posts_categories, target_post})
+        res.status(200).json({message: `${category_added[0].category_name} category has been added to post with title: ${target_post[0].title}. `, posts_categories, target_post})
     } catch {
         res.status(500).json(err)
     }

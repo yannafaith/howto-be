@@ -7,6 +7,8 @@ const db = require('../../database/dbConfig.js');
 
 /* ========== GET =========== */
 
+// returns all posts and post categories
+
 router.get('/', async (req, res) => {
     const allPosts = await posts.getAll();
     const posts_categories =  await db('post-categories').join('categories', 'post-categories.category_id', '=', 'categories.id');
