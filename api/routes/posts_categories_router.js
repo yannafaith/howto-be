@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../../database/dbConfig.js');
+const authHelper = require('../../common/auth-helpers.js');
 
 // need to make unable to add duplicate categories
 // need an update 
@@ -36,7 +37,7 @@ const db = require('../../database/dbConfig.js');
 
 // adds category to post, needs post_id and category_id, returns target post and associated categories
 
- router.post('/', async (req, res) => {
+ router.post('/', authHelper.protected, async (req, res) => {
     const addition = await db('post-categories').insert(req.body);
 
     const category_added = await db('categories').where({id: req.body.category_id});
