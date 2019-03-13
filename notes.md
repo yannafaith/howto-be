@@ -1,3 +1,4 @@
+Need to update response data for auth routes 
 ## **GET USER BY ID**
 
 _Method Url:_ `/api/users/:id`

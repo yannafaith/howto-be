@@ -2,7 +2,7 @@ const db = require('../dbConfig.js');
 
 async function insert(post) {
   await db('posts').insert(post)
-  return db('posts')
+  return db('posts');
 };
 
  async function getAll() {

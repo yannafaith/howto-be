@@ -102,7 +102,7 @@ _HTTP method:_ **[GET]**
 ```
 [
     {
-        "userId": 1,
+        "id": 1,
         "username": "tommy",
         "password": "$2a$11$LQImXlHE7dt0RSD9gjuvBecaZMMKYuW.vGcWsi3YumGU25PwLiFM2",
         "firstname": "Tommy",
@@ -111,7 +111,7 @@ _HTTP method:_ **[GET]**
         "phone": 5104082587
     },
     {
-        "userId": 2,
+        "id": 2,
         "username": "linda",
         "password": "$2a$11$d6mtGCQJBekPkqHvyog7GuaE82AfjcXzytL3ELtR8Dc.ENBNu7i/a",
         "firstname": "Linda",
@@ -120,7 +120,7 @@ _HTTP method:_ **[GET]**
         "phone": 5102382227
     },
     {
-        "userId": 3,
+        "id": 3,
         "username": "jimmy",
         "password": "$2a$11$zXVFMlzrFfu9aYoJFOJCs.94KBfBvt3/BODdYaMWCj4ozs1EHj/Vy",
         "firstname": "Jimmy",
