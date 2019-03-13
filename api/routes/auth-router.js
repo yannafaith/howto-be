@@ -11,8 +11,9 @@ router.post('/register', async (req, res) => {
     creds.password = hash;
 
     try {
-       const insertUser = await users.insert(creds);
+       let insertUser = await users.insert(creds);
        const token = authHelper.generateToken(creds);
+       insertUser = await db('users').where({username: insertUser.username}).select("id", "username", "email", "firstName", "lastName");
 
        res.status(201).json({
           message: `Registration successful`,
@@ -29,12 +30,16 @@ router.post('/register', async (req, res) => {
     const creds = req.body;
 
     try {
-       const user = await db('users')
+       let user = await db('users')
           .where({ username: creds.username })
           .first();
 
        if (user && bcrypt.compareSync(creds.password, user.password)) {
           const token = authHelper.generateToken(user);
+
+          user = await db('users')
+          .where({ username: creds.username })
+          .first().select("id", "username", "email", "firstName", "lastName");
 
           res.status(200).json({
              message: `Welcome back ${user.firstName} ${user.lastName}`,
