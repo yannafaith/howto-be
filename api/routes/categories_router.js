@@ -11,14 +11,11 @@ router.get('/', async (req, res) => {
     }
 });
 
-
-    // will have to change name to category_name when rollback migrations and seeding. 
-
 router.post('/', async (req, res) => {
     let newCat = req.body;
     await db('categories').insert(newCat);
 
-    newCat = await db('categories').where({name: req.body.name}).first();
+    newCat = await db('categories').where({category_name: req.body.category_name}).first();
 
     try {
         res.status(200).json(newCat)

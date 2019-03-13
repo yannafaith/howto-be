@@ -83,6 +83,8 @@ router.put('/:id', async (req, res) => {
 
 /* ========== DELETE =========== */
 
+// will have to delete all posts-categories associated with post before deleting post
+
 router.delete('/:id', async (req, res) => {
     const { id } = req.params;
     try {

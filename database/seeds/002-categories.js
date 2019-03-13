@@ -5,16 +5,16 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex('categories').insert([
         {
-          name: "Programming"
+          category_name: "Programming"
         },
         {
-          name: "Gardening"
+          category_name: "Gardening"
         },
         {
-          name: "Fitness"
+          category_name: "Fitness"
         },
         {
-          name: "Javascript"
+          category_name: "Javascript"
         }
       ]);
     });

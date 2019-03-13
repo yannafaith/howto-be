@@ -1,7 +1,10 @@
 const express = require('express');
-const posts = require('../../database/models/posts-model.js')
 const router = express.Router();
 const db = require('../../database/dbConfig.js');
+
+// need to make unable to add duplicate categories
+// need an update 
+// need to seed a user with id 1
 
 
  /* POSTS_CATEGORIES */
