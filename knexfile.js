@@ -7,7 +7,7 @@ module.exports = {
     client: 'sqlite3',
     useNullAsDefault: true,
     connection: {
-      filename: './database/how-to.sqlite3',
+      filename: './database/howtodb.sqlite3',
     },
     pool: {
       afterCreate: (conn, done) => {
@@ -39,7 +39,7 @@ module.exports = {
     ssl: true,
     pool: {
       min: 2,
-      max: 10,
+      max: 50,
     },
     migrations: {
       tableName: 'knex_migrations',
