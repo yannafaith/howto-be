@@ -75,9 +75,10 @@ router.put('/:id', authHelper.protected, async (req, res) => {
           : await db('posts')
                .where({ id: id })
                .update(changes);
+            const changedPost = await db('posts').where({id:id})
        res.status(202).json({
           message: `post with id:'${post.id}' has been updated`,
-          changes,
+          changedPost,
        });
     } catch (err) {
        res.status(500).json({ error: 'unable to update the post' });
