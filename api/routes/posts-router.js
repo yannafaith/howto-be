@@ -100,9 +100,12 @@ router.delete('/:id', authHelper.protected, async (req, res) => {
           : await db('posts')
                .where({ id: id })
                .delete();
+
+            allPosts = await db('posts')
  
        res.status(202).json({
           message: 'post has been deleted.',
+          allPosts
        });
     } catch (err) {
        res.status(500).json({ error: 'Unable to delete post' });
