@@ -83,7 +83,7 @@ router.put('/:id', authHelper.protected, async (req, res) => {
           changedPost
        });
     } catch (err) {
-       res.status(500).json({ error: 'unable to update the post' });
+       res.status(500).json({ err, error: 'unable to update the post' });
     }
  });
 
