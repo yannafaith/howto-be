@@ -76,7 +76,7 @@ router.put('/:id', authHelper.protected, async (req, res) => {
                .where({ id: id })
                .update(changes);
             const changedPost = await db('posts').where({id:id})
-            const allPosts = db('posts')
+            const allPosts = await db('posts')
        res.status(202).json({
           message: `post with id:'${post.id}' has been updated`,
           allPosts,
