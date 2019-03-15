@@ -44,7 +44,7 @@ router.get('/:id', async (req, res) => {
  // returns created post and all posts 
 
 router.post('/', authHelper.protected, async (req, res) => {
-    let newPost = req.body;
+    let { id, ...newPost } = req.body
     console.log(req.body);
 
     try {
