@@ -1,7 +1,7 @@
 const express = require('express');
 const server = express();
 const helmet = require('helmet');
-const cors = require('cors');
+// const cors = require('cors');
 
 const users = require('./routes/users-router.js');
 const auth = require('./routes/auth-router.js');
@@ -11,7 +11,7 @@ const posts_categories = require('./routes/posts_categories_router.js')
 
 server.use(express.json());
 server.use(helmet());
-server.use(cors())
+// server.use(cors())
 
 const allowedOrigins = ['http://localhost:3000', 'https://howto-frontend.netlify.com'];
 
