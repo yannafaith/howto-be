@@ -46,10 +46,10 @@ router.get('/:id', async (req, res) => {
 router.post('/', authHelper.protected, async (req, res) => {
     let newPost = req.body;
 
-    const allPosts = await posts.insert(newPost);
-    newPost = await db('posts').where({title: newPost.title}).first();
-
     try {
+      const allPosts = await posts.insert(newPost);
+      newPost = await db('posts').where({title: newPost.title}).first();
+  
         res.status(201).json({
            message: "post created!",
            newPost, allPosts
