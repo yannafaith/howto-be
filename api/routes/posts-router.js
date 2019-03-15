@@ -45,6 +45,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', authHelper.protected, async (req, res) => {
     let newPost = req.body;
+    console.log(req.body);
 
     try {
       const allPosts = await posts.insert(newPost);
