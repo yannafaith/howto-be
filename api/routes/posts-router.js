@@ -55,7 +55,7 @@ router.post('/', authHelper.protected, async (req, res) => {
            newPost, allPosts
          })
 
-    } catch {
+    } catch (err) {
         res.status(500).json(err)
     }
 });
