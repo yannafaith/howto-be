@@ -13,7 +13,7 @@ server.use(express.json());
 server.use(helmet());
 server.use(
     cors({
-      origin: ['http://localhost:3000', 'https://howto-frontend.netlify.com'],
+      origin: 'https://howto-frontend.netlify.com',
       credentials: true,
     }),
   );
