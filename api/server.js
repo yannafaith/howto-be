@@ -14,6 +14,16 @@ server.use(helmet());
 
 const allowedOrigins = ['http://localhost:3000', 'https://howto-frontend.netlify.com'];
 
+
+server.use(
+  cors({
+    origin: ['http://localhost:3000', 'https://howto-frontend.netlify.com'],
+    credentials: true,
+  }),
+);
+
+
+/*
 server.use(cors({
   origin: (origin, callback) => {
     // allow requests with no origin (like mobile apps or curl requests)
@@ -25,6 +35,13 @@ server.use(cors({
     return callback(null, true);
   }
 }));
+*/
+
+server.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 
 
 server.use('/api/users', users);
