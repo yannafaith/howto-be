@@ -13,11 +13,10 @@ server.use(express.json());
 server.use(helmet());
 server.use(
     cors({
-      origin: 'https://howto-frontend.netlify.com',
+      origin: ['http://localhost:3000', 'https://howto-frontend.netlify.com'],
       credentials: true,
     }),
   );
-
 server.use('/api/users', users);
 server.use('/api/auth', auth);
 server.use('/api/posts', posts);
