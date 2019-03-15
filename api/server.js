@@ -12,6 +12,7 @@ const posts_categories = require('./routes/posts_categories_router.js')
 server.use(express.json());
 server.use(helmet());
 server.use(cors());
+server.options('*', cors());
 
 //const allowedOrigins = ['http://localhost:3000', 'https://howto-frontend.netlify.com'];
 
