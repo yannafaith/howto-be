@@ -11,12 +11,22 @@ const posts_categories = require('./routes/posts_categories_router.js')
 
 server.use(express.json());
 server.use(helmet());
-server.use(
-    cors({
-      origin: ['http://localhost:3000', 'https://howto-frontend.netlify.com'],
-      credentials: true,
-    }),
-  );
+
+const allowedOrigins = ['http://localhost:3000', 'https://howto-frontend.netlify.com'];
+
+server.use(cors({
+  origin: (origin, callback) => {
+    // allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) {
+      var msg = 'The CORS policy for this site does not ' + 'allow access from the specified Origin.';
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  }
+}));
+
+
 server.use('/api/users', users);
 server.use('/api/auth', auth);
 server.use('/api/posts', posts);
