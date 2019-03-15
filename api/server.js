@@ -14,13 +14,14 @@ server.use(helmet());
 
 const allowedOrigins = ['http://localhost:3000', 'https://howto-frontend.netlify.com'];
 
-
+/*
 server.use(
   cors({
     origin: ['http://localhost:3000', 'https://howto-frontend.netlify.com'],
     credentials: true,
   }),
-);
+); 
+*/
 
 
 /*
@@ -38,8 +39,13 @@ server.use(cors({
 */
 
 server.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Origin", "https://howto-frontend.netlify.com");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods", "GET, POST, PUT DELETE");
+    res.header("Access-Control-Allow-Credentials", true);
+    if (req.method === "OPTIONS") {
+        return res.sendStatus(204);
+    }
     next();
   });
 
