@@ -43,7 +43,7 @@ router.get('/:id', async (req, res) => {
 
  // returns created post and all posts 
 
-router.post('/', authHelper.protected, async (req, res) => {
+router.post('/', async (req, res) => {
     let { id, ...newPost } = req.body
     console.log(req.body);
 
@@ -63,7 +63,7 @@ router.post('/', authHelper.protected, async (req, res) => {
 
 /* ========== PUT =========== */
 
-router.put('/:id', authHelper.protected, async (req, res) => {
+router.put('/:id', async (req, res) => {
     const { id } = req.params
     const changes = req.body;
     try {
@@ -90,7 +90,7 @@ router.put('/:id', authHelper.protected, async (req, res) => {
 
 /* ========== DELETE =========== */
 
-router.delete('/:id', authHelper.protected, async (req, res) => {
+router.delete('/:id', async (req, res) => {
     const { id } = req.params;
     try {
          const del_post_categories = await db('post-categories').where({post_id:id}).del()

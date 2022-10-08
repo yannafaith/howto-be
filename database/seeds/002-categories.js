@@ -1,7 +1,7 @@
 
 exports.seed = function(knex, Promise) {
-  return knex('categories').delete()
-    .then(function () {
+//  return knex('categories').delete()
+//    .then(function () {
       // Inserts seed entries
       return knex('categories').insert([
         {
@@ -17,5 +17,5 @@ exports.seed = function(knex, Promise) {
           category_name: "Javascript"
         }
       ]);
-    });
+//    });
 };

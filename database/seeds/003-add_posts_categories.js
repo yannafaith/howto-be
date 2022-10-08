@@ -1,9 +1,9 @@
 
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex('post-categories').delete()
-    .then(function () {
-      // Inserts seed entries
+//  return knex('post-categories').delete()
+//    .then(function () {
+//      // Inserts seed entries
       return knex('post-categories').insert([
         {
           post_id: 1,
@@ -22,5 +22,5 @@ exports.seed = function(knex, Promise) {
           category_id: 4
         },
       ]);
-    });
+//    });
 };

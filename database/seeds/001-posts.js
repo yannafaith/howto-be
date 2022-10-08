@@ -1,10 +1,10 @@
 const faker = require('faker');
 
 exports.seed = function(knex, Promise) {
-  // Deletes ALL existing entries
-  return knex('posts').delete()
-    .then(function () {
-      // Inserts seed entries
+////   Deletes ALL existing entries
+//  return knex('posts').delete()
+//    .then(function () {
+//      // Inserts seed entries
       return knex('posts').insert([
         {
           title: "How to sign up for Lambda School",
@@ -25,5 +25,5 @@ exports.seed = function(knex, Promise) {
           creator_id: 1
         },
       ]);
-    });
+//    });
 };
